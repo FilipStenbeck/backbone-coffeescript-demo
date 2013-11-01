@@ -1,4 +1,4 @@
 backbone-coffeescript-demo
 ==========================
 
-Small demo of backbone and CoffeeScript and of using JST templates. Built with the Yeoman Backbone generator
+Small demo of building a backbone app with CoffeeScript and of using JST templates. Built with the Yeoman Backbone generator

@@ -1,0 +1,22 @@
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    color:white;
+  
+}
+
+.animate-me  {
+	margin-bottom: 40px;
+	cursor: pointer;
+ 	text-align: center;
+}
+
+@media (min-width: 768px) {
+  .page-header h1 {
+  	margin-left: 25%
+  }
+}
+

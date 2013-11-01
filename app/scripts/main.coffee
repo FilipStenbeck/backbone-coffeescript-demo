@@ -18,7 +18,15 @@ window.bbCoffee =
     flipper = new bbCoffee.Views.AnimateView (el: '.flipper', css: 'flip', myName : 'Flipper')
     flipper.render()
     true
-    
+
+    tada = new bbCoffee.Views.AnimateView (el: '.tada', css: 'tada', myName : ' the tada guy')
+    tada.render()
+
+    tada = new bbCoffee.Views.AnimateView (el: '.swing', css: 'swing', myName : ' ... a swinger')
+    tada.render()
+
+    true
+
 $ ->
   'use strict'
   bbCoffee.init();

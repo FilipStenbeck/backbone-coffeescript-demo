@@ -11,11 +11,18 @@
         <!-- endbuild -->
     </head>
     <body>
-         <div class="page-header">
-                <img src="images/logo.png">
+        <div class="container">
+
+            <div class="page-header">
+                <div class="menu">
+                    <a class="link" href="#showdetails" >Show details </a>
+                    <a class="link" href="#hidedetails" >Hide details</a>
+                    <a class="link" href="#about" >About</a>
+                </div>
+                <a href="#"><img src="images/logo.png"></a>
                 <h1> <small>with backbone... and some CSS animations</small></h1>
             </div>
-        <div class="container">
+            <!-- Main Content-->
             <div class="row">
             <div class="col-md-6 col-md-offset-3">    
                 <div class="wobbler"></div>
@@ -47,19 +54,24 @@
                 </div>
             </div>
 
-            
+            <!-- About-->
+            <div id="about"></div>
         </div>
     </div>
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/bootstrap/js/modal.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
         <script src="scripts/views/animate.js"></script>
+        <script src="scripts/routes/appRouter.js"></script>
+        <script src="scripts/views/about.js"></script>
+        <script src="scripts/views/details.js"></script>
         <!-- endbuild -->
     </body>
 </html>

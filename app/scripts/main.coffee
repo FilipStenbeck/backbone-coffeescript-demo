@@ -3,45 +3,29 @@ window.bbCoffee =
   Collections: {}
   Views: {}
   Routers: {}
+  animations: []
   
+
   #initialize backbone
   init: ->
     'use strict'
+    @create(new bbCoffee.Views.AnimateView (el: '.wobbler', css : 'wobble', msg : 'Wobbler'))
+    @create(new bbCoffee.Views.AnimateView (el: '.shaker', css: 'shake', msg : 'Shaker'))
+    @create(new bbCoffee.Views.AnimateView (el: '.pulser', css: 'pulse', msg : 'Pulser' ))
+    @create(new bbCoffee.Views.AnimateView (el: '.flipper', css: 'flip', msg : 'Flipper' ))
+    @create(new bbCoffee.Views.AnimateView (el: '.tada', css: 'tada', msg : 'Tada' ))
+    @create(new bbCoffee.Views.AnimateView (el: '.swing', css: 'swing', msg : ' a swinger'))
 
-    wobbler = new bbCoffee.Views.AnimateView (el: '.wobbler', css : 'wobble', msg : 'Wobbler')
-    wobbler.render()
-
-    shaker = new bbCoffee.Views.AnimateView (el: '.shaker', css: 'shake', msg : 'Shaker')
-    shaker.render()
+  create : (view)->
+    @animations.push(view.render())
     
-    pulser = new bbCoffee.Views.AnimateView (el: '.pulser', css: 'pulse', msg : 'Pulser' )
-    pulser.render()
+  startRouters : ->
+    appRouter = new bbCoffee.Routers.ApprouterRouter(pushState: true)
+    Backbone.history.start()
+
     
-    flipper = new bbCoffee.Views.AnimateView (el: '.flipper', css: 'flip', msg : 'Flipper' )
-    flipper.render()
-    true
-
-    tada = new bbCoffee.Views.AnimateView (el: '.tada', css: 'tada', msg : ' the tada guy' )
-    tada.render()
-
-    tada = new bbCoffee.Views.AnimateView (el: '.swing', css: 'swing', msg : ' ... a swinger')
-    tada.render()
- 
-  #Do some Jquery stuff
-  fixHeader: ->
-    'use strict'
-    @header = $('.page-header')
-    $(@header).click( (event) =>
-      $(@header).addClass('bounceOutUp animated')
-      setTimeout ( =>
-             $(@header).slideUp()
-        ), 600 
-    )
-
-
 $ ->
   'use strict'
-  bbCoffee.fixHeader();
   bbCoffee.init();
-
+  bbCoffee.startRouters();
 

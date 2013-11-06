@@ -1,18 +1,59 @@
+a {
+	text-decoration: none;
+	color: #999999;	
+}
+
+a:hover {
+	text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 960px;
+}
 .page-header {
     text-align: center;
     margin-bottom: 40px;
-    cursor: pointer;
 }
 
 .page-header h1 {
     color:white;
-  
 }
 
+.menu {
+  float : left;
+  width: 120px; 
+}
+.menu a {
+    float : left;
+    clear : left;
+    margin-left: 20px;
+}
+
+.details {
+  float : right;
+}
+
+.modal {
+  font-size: 1.3em;
+}
+
+
+.modal-header {
+  color: #999999;
+}
+
+.modal-footer {
+  color: #999999;
+}
 .animate-me  {
 	margin-top: 20px;
+  margin-bottom: 5px;
 	cursor: pointer;
  	text-align: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/coffeescript_logo_64.png');
+  background-position: left 20px bottom 30px;
 }
 
 @media (min-width: 768px) {

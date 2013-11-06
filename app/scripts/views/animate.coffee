@@ -8,14 +8,29 @@ class bbCoffee.Views.AnimateView extends Backbone.View
         @template = JST['app/scripts/templates/animate.ejs'](name : @msg)
 
     render : -> 
-        $(@el).append(_.template(@template))
+        $(@el).html(_.template(@template))
+        this
     
     animate : ->
         @className =  @css + ' animated'
         $(@el).addClass( @className )
         setTimeout ( =>
             $(@el).removeClass(@className)
-        ), 1000 
+        ), 1000
+
+    getClassNameFromEl : ->
+        classNames = $(@el).attr('class').split(/\s/)
+        detailsEl =  '.' + classNames[0] +   ' .details'
+        
+    showDetails : ->
+        if @details
+            @details = null
+            @render()
+        else
+            @render()
+            @details = new bbCoffee.Views.DetailsView(el: @getClassNameFromEl())
+            @details.render()
 
     events :  
-        'click ' : 'animate'    
+        'mouseenter' : 'animate',
+        'click' : 'showDetails'    
